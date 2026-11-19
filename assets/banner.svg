@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="glowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="glowGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="glowGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Drop Shadows and Filters -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="glowEffect">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        fill: #ffffff;
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        fill: #cbd5e1;
+      }
+      .tag-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-16px) scale(1.04); }
+      }
+      @keyframes floatRev {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(14px) scale(0.96); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.45; }
+        50% { opacity: 0.85; }
+      }
+      @keyframes waveBar {
+        0%, 100% { transform: scaleY(0.3); }
+        50% { transform: scaleY(1.0); }
+      }
+      .orb-1 { animation: floatSlow 8s ease-in-out infinite; }
+      .orb-2 { animation: floatRev 10s ease-in-out infinite; }
+      .pulse-item { animation: pulseGlow 4s ease-in-out infinite; }
+      .wave-1 { transform-origin: bottom; animation: waveBar 1.2s ease-in-out infinite 0.1s; }
+      .wave-2 { transform-origin: bottom; animation: waveBar 1.2s ease-in-out infinite 0.3s; }
+      .wave-3 { transform-origin: bottom; animation: waveBar 1.2s ease-in-out infinite 0.5s; }
+      .wave-4 { transform-origin: bottom; animation: waveBar 1.2s ease-in-out infinite 0.2s; }
+      .wave-5 { transform-origin: bottom; animation: waveBar 1.2s ease-in-out infinite 0.4s; }
+    </style>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Animated Ambient Orbs in Background -->
+  <circle class="orb-1" cx="200" cy="120" r="140" fill="url(#glowGrad1)" />
+  <circle class="orb-2" cx="1020" cy="280" r="160" fill="url(#glowGrad2)" />
+  <circle class="pulse-item" cx="620" cy="360" r="120" fill="url(#glowGrad3)" />
+
+  <!-- Decorative Tech Wave & Grid Elements -->
+  <g opacity="0.12">
+    <path d="M0,320 C300,260 450,380 750,300 C950,250 1100,340 1200,310 L1200,420 L0,420 Z" fill="#8b5cf6" />
+    <path d="M0,280 C250,220 500,340 800,260 C1000,210 1120,290 1200,270 L1200,420 L0,420 Z" fill="#ec4899" />
+    <line x1="100" y1="0" x2="100" y2="420" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 8" />
+    <line x1="300" y1="0" x2="300" y2="420" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 8" />
+    <line x1="900" y1="0" x2="900" y2="420" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 8" />
+    <line x1="1100" y1="0" x2="1100" y2="420" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 8" />
+  </g>
+
+  <!-- Foreground Content: Header Badge -->
+  <g transform="translate(600, 70)" text-anchor="middle">
+    <rect x="-185" y="-18" width="370" height="36" rx="18" fill="#1f2937" stroke="url(#accentGrad)" stroke-width="1.5" />
+    <circle cx="-150" cy="0" r="5" fill="#10b981" class="pulse-item" />
+    <text x="0" y="5" text-anchor="middle" fill="#f3f4f6" class="tag-text">✨ CURATED ECOSYSTEM &amp; RADAR</text>
+  </g>
+
+  <!-- Foreground Main Title with Gradient Fill -->
+  <g transform="translate(600, 155)" text-anchor="middle">
+    <text class="title-text" font-size="42" letter-spacing="-0.5" filter="url(#shadow)">
+      AI Virtual Companion &amp; Voice Agents
+    </text>
+    <rect x="-160" y="24" width="320" height="4" rx="2" fill="url(#accentGrad)" />
+  </g>
+
+  <!-- Foreground Subtitle -->
+  <g transform="translate(600, 222)" text-anchor="middle">
+    <text class="subtitle-text" font-size="18" letter-spacing="0.2">
+      Character Chatbots • Live2D / VRM Avatars • Neuro-sama Stacks • Local Voice Pipelines
+    </text>
+  </g>
+
+  <!-- Tech Feature Dynamic Badges / Pills -->
+  <g transform="translate(190, 275)">
+    <!-- Pill 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="180" height="42" rx="21" fill="#1e1e38" stroke="#ec4899" stroke-width="1" />
+      <text x="90" y="26" text-anchor="middle" fill="#f472b6" class="tag-text">🎙️ Realtime Voice &amp; TTS</text>
+    </g>
+    <!-- Pill 2 -->
+    <g transform="translate(205, 0)">
+      <rect width="195" height="42" rx="21" fill="#1e1e38" stroke="#8b5cf6" stroke-width="1" />
+      <text x="97" y="26" text-anchor="middle" fill="#c084fc" class="tag-text">🎭 Live2D &amp; VRM Avatars</text>
+    </g>
+    <!-- Pill 3 -->
+    <g transform="translate(425, 0)">
+      <rect width="195" height="42" rx="21" fill="#1e1e38" stroke="#3b82f6" stroke-width="1" />
+      <text x="97" y="26" text-anchor="middle" fill="#60a5fa" class="tag-text">🧠 Long-Term Memory</text>
+    </g>
+    <!-- Pill 4 -->
+    <g transform="translate(645, 0)">
+      <rect width="175" height="42" rx="21" fill="#1e1e38" stroke="#10b981" stroke-width="1" />
+      <text x="87" y="26" text-anchor="middle" fill="#34d399" class="tag-text">🔒 100% Local / Self-Hosted</text>
+    </g>
+  </g>
+
+  <!-- Animated Voice Visualizer Indicator at bottom center -->
+  <g transform="translate(600, 360)">
+    <g transform="translate(-40, 0)">
+      <rect class="wave-1" x="0" y="-20" width="6" height="20" rx="3" fill="#ec4899" />
+      <rect class="wave-2" x="18" y="-30" width="6" height="30" rx="3" fill="#a855f7" />
+      <rect class="wave-3" x="36" y="-40" width="6" height="40" rx="3" fill="#38bdf8" />
+      <rect class="wave-4" x="54" y="-28" width="6" height="28" rx="3" fill="#a855f7" />
+      <rect class="wave-5" x="72" y="-18" width="6" height="18" rx="3" fill="#ec4899" />
+    </g>
+  </g>
+</svg>
